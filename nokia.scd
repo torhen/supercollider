@@ -1,0 +1,1 @@
+~abc.value("e'/4d'/4^f/2^g/2 ^c'/4b/4d/2e/2 b/4 a/4 ^c/2 e/2 a3/2", amp:0.05).play
