@@ -44,7 +44,7 @@ p = Pbind(
     \instrument, \simple_synth,
     \out, ~bus,      // Send audio to the bus
 	\freq, Pxrand([330,440,550], inf),  // Choose randomly, but never repeat the same item twice in immediate succession.
-    \dur, 1.3,       // Duration per note
+    \dur, 2.3,       // Duration per note
 	\legato, 0.1
 ).play;
 )
