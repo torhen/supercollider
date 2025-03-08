@@ -26,7 +26,7 @@ a.set(\gate, 0);
 SynthDef(\echo_effect, {
     arg in = 0, out = 0;
     var sig = In.ar(in, 1); // Read from the bus
-    var echo = CombN.ar(sig, 1.0, 0.3, 10); // Echo effect
+    var echo = CombN.ar(sig, 0.3, 0.3, 10); // Echo effect
     Out.ar(0, echo);
 }).add;
 )
@@ -44,7 +44,7 @@ p = Pbind(
     \instrument, \simple_synth,
     \out, ~bus,      // Send audio to the bus
 	\freq, Pxrand([330,440,550], inf),  // Choose randomly, but never repeat the same item twice in immediate succession.
-    \dur, 2.3,       // Duration per note
+    \dur, 2,       // Duration per note
 	\legato, 0.1
 ).play;
 )
