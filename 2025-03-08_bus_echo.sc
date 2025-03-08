@@ -10,7 +10,7 @@ s.meter;
 SynthDef(\simple_synth, {
 	arg out = 0, freq = 440, amp = 0.1, gate=1;
 	var sig, env;
-	env = EnvGen.kr(Env.adsr(0.01, 0.3, 1, 0), gate, doneAction:2);
+	env = EnvGen.kr(Env.adsr(0.01, 0.3, 1, 0.1), gate, doneAction:2);
 	sig = SinOsc.ar(freq) * env * amp;
 	Out.ar(out, sig);
 }).add;
@@ -46,7 +46,7 @@ p = Pbind(
     \freq, Pseq([440, 550, 660], inf),  // Melody loop
     \dur, 1.3,       // Duration per note
     \amp, 0.2,        // Volume
-	\legato, 0.01
+	\legato, 0.1
 ).play;
 )
 
