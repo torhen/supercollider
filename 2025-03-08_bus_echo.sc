@@ -10,7 +10,7 @@ s.meter;
 SynthDef(\simple_synth, {
 	|out = 0, freq = 440, gate=1|
 	var sig, env;
-	env = EnvGen.kr(Env.adsr(0.01, 0.3, 1, 0.1), gate, doneAction:2);
+	env = EnvGen.kr(Env.asr(0.01, 1, 0.1), gate, doneAction:2);
 	sig = SinOsc.ar(freq) * env * 0.1;
 	Out.ar(out, sig);
 }).add;
@@ -43,8 +43,8 @@ a.set(\gate,0);
 p = Pbind(
     \instrument, \simple_synth,
     \out, ~bus,
-	\freq, Pxrand([330, 440, 550], inf),
-	\dur, Pxrand([1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], inf),
+	\freq, Pxrand([330, 440, 550], inf).trace,
+	\dur, Pxrand([1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], inf).trace,
 	\legato, 0.1
 ).play;
 )
