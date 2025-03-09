@@ -2,7 +2,7 @@ s.boot;
 s.plotTree;
 s.meter;
 
-// Create an audio bus
+// Create an audio bus with one channel (mono)
 ~bus = Bus.audio(s, 1);
 
 (
@@ -42,9 +42,9 @@ a.set(\gate,0);
 (
 p = Pbind(
     \instrument, \simple_synth,
-    \out, ~bus,      // Send audio to the bus
-	\freq, Pxrand([330, 440, 550], inf),  // Choose randomly, but never repeat the same item twice in immediate succession.
-    \dur, 2,       // Duration per note
+    \out, ~bus,
+	\freq, Pxrand([330, 440, 550], inf),
+    \dur, 2,
 	\legato, 0.1
 ).play;
 )
