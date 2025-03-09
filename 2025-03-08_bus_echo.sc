@@ -44,7 +44,7 @@ p = Pbind(
     \instrument, \simple_synth,
     \out, ~bus,
 	\freq, Pxrand([330, 440, 550], inf).trace,
-	\dur, Pxrand([1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], inf).trace,
+	\dur, Pxrand([1, 2, 3, 4, 5, 6, 7], inf).trace,
 	\legato, 0.1
 ).play;
 )
