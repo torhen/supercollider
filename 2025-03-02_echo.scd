@@ -14,7 +14,7 @@ SynthDef(\test, {
 
 )
 
-a = Synth.new(\test);
+a = Synth(\test);
 a.set(\gate, 0);
 
 (
