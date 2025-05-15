@@ -3,7 +3,7 @@ s.plotTree;
 
 (
 SynthDef(\test, {
-	arg freq=440, gate=1;
+	|freq=440, gate=1|
 	var sig, env;
 	sig = SinOsc.ar(freq);
 	env = EnvGen.ar(Env.adsr(attackTime:0.01, decayTime:0.5, sustainLevel:0), gate, doneAction:2);
