@@ -6,7 +6,7 @@ SynthDef(\test, {
 	|freq=440, gate=1|
 	var sig, env;
 	sig = SinOsc.ar(freq);
-	env = EnvGen.ar(Env.adsr(attackTime:0.01, decayTime:0.5, sustainLevel:0), gate, doneAction:2);
+	env = EnvGen.ar(Env.adsr(0.01, 0.5, 0, 0), gate, doneAction:2);
 	sig = sig * env * 0.3;
 	sig = CombL.ar(sig, 0.2, 0.2, 3);
 	Out.ar(0, sig);
