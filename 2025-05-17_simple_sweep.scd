@@ -14,6 +14,8 @@ SynthDef(\effect, {
 	Out.ar(out, sig);
 }).add;
 
+)
+(
 SynthDef(\synth1, {
 	|freq=440, gate=1, out=0, vol=0.3|
 	var sig, env;
